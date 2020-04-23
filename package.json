@@ -4,6 +4,9 @@
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
+    "prod": "meteor --production",
+    "docs:ui": "node_modules/.bin/jsdoc -c jsdoc-ui.json",
+    "docs:api": "node_modules/.bin/jsdoc -c jsdoc-api.json",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
   },
@@ -22,6 +25,8 @@
     }
   },
   "devDependencies": {
-    "chai": "^4.2.0"
+    "better-docs": "^1.4.7",
+    "chai": "^4.2.0",
+    "jsdoc": "^3.6.4"
   }
 }

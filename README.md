@@ -1,0 +1,1 @@
+https://medium.com/@antonkrinitsyn/jsdoc-react-5e6c530880a0

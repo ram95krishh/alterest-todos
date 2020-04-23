@@ -6,6 +6,16 @@ import AccountsUIWrapper from '../components/AccountsUIWrapper';
 import Task from '../components/Task';
 import { Tasks } from '../../api/tasks.js';
 
+/**
+ * Root container of the app.
+ * 
+ * @component App
+ * @hideconstructor
+ * 
+ * @example
+ * 
+ * ReactDOM.render(<App />, document.getElementById('app'));
+ */
 class App extends Component {
  
   renderTasks() {
@@ -30,12 +40,6 @@ class App extends Component {
     event.preventDefault();
     const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
 
-    // Tasks.insert({
-    //   text,
-    //   createdAt: new Date(),
-    //   owner: Meteor.userId(),
-    //   username: Meteor.user().username,
-    // });
     Meteor.call('tasks.insert', text);
 
     ReactDOM.findDOMNode(this.refs.textInput).value = '';

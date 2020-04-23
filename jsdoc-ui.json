@@ -1,0 +1,26 @@
+{
+    "tags": {
+        "allowUnknownTags": true,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include": ["imports/ui"],
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_",
+        "exclude": ["imports/ui/components/Task.jsx"]
+    },
+    "plugins": [
+        "plugins/markdown",
+        "better-docs/component"
+    ],
+     "templates": {
+      "better-docs": {
+          "name": "My React components"
+        }
+    },
+    "opts": {
+        "destination": "docs/ui",
+        "recurse": true,
+        "readme": "README.md"
+    }
+}

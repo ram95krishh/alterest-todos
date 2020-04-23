@@ -3,7 +3,17 @@ import ReactDOM from 'react-dom';
 import { Template } from 'meteor/templating';
 import { Blaze } from 'meteor/blaze';
  
-export default class AccountsUIWrapper extends Component {
+/**
+ * When included, imports Meteor's inbuilt AccountsUIWrapper login component
+ * 
+ * @component AccountsUIWrapper
+ * @hideconstructor
+ * 
+ * @example
+ * 
+ * <AccountsUIWrapper />
+ */
+class AccountsUIWrapper extends Component {
   componentDidMount() {
     this.view = Blaze.render(Template.loginButtons,
       ReactDOM.findDOMNode(this.refs.container));
@@ -17,3 +27,5 @@ export default class AccountsUIWrapper extends Component {
     return <span ref="container" />;
   }
 }
+
+export default AccountsUIWrapper;
